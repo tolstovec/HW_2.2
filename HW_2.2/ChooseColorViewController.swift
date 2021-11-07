@@ -117,9 +117,18 @@ extension ChooseColorViewController: UITextFieldDelegate {
         toolBar.barStyle = UIBarStyle.default
         toolBar.isTranslucent = true
         
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(donePressed))
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(cancelPressed))
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(
+            title: "Done",
+            style: UIBarButtonItem.Style.done,
+            target: self, action: #selector(donePressed))
+        let cancelButton = UIBarButtonItem(
+            title: "Cancel",
+            style: UIBarButtonItem.Style.plain,
+            target: self, action: #selector(cancelPressed))
+        let spaceButton = UIBarButtonItem(
+            barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace,
+            target: nil,
+            action: nil)
         
         toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
@@ -157,7 +166,7 @@ extension ChooseColorViewController: UITextFieldDelegate {
             savePreviousValue()
             showAlert(
                 title: "Ошибка",
-                message: "Значение не может быть пустым, пожалуйста введите значение от 0 до 1")
+                message: "Значение не может быть пустым, пожалуйста введите значение от 0.00 до 1.00")
         }
     }
     
