@@ -51,7 +51,6 @@ class ChooseColorViewController: UIViewController {
         addToolBar(textField: redColorTextFieldOutlet)
         addToolBar(textField: greenColorTextFieldOutlet)
         addToolBar(textField: blueColorTextFieldOutlet)
-        
     }
     
     // MARK: - Переназначение класса скрытие клавиатуры по касанию по экрану
@@ -68,8 +67,8 @@ class ChooseColorViewController: UIViewController {
     
     // MARK: - Кнопка закрытия экрана настроек
     @IBAction func doneButtonPressed() {
-        let value = colorWindowOutlet.backgroundColor!
-        delegate.setNewViewBackgroundColor(newValue: value)
+        let colorValue = colorWindowOutlet.backgroundColor!
+        delegate.setNewViewBackgroundColor(for: colorValue)
         dismiss(animated: true)
     }
     
@@ -164,7 +163,6 @@ extension ChooseColorViewController: UITextFieldDelegate {
     
     // MARK: - Проверка на значения больше разрешённого
     private func checkingOverValue() {
-        
         guard let redTF = Float(redColorTextFieldOutlet.text!) else { return }
         guard let greenTF = Float(greenColorTextFieldOutlet.text!) else { return }
         guard let blueTF = Float(blueColorTextFieldOutlet.text!) else { return }
@@ -179,7 +177,6 @@ extension ChooseColorViewController: UITextFieldDelegate {
     
     // MARK: - Изменения фонового цвета маленького и большого окна и присвоения значения каждого цвета всем элементам
     private func changedColor() {
-    
         redColorLabalOutlet.text = String(format: "%.2f", redColorSliderOutlet.value)
         greenColorLabalOutlet.text = String(format: "%.2f", greenColorSliderOutlet.value)
         blueColorLabalOutlet.text = String(format: "%.2f", blueColorSliderOutlet.value)

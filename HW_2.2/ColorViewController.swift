@@ -8,14 +8,13 @@
 import UIKit
 
 protocol ChoosenColorViewControlletDelegate {
-    func setNewViewBackgroundColor(newValue: UIColor)
+    func setNewViewBackgroundColor(for newValue: UIColor)
 }
 
 class ColorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       // view.backgroundColor = .red
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -27,7 +26,7 @@ class ColorViewController: UIViewController {
 }
 
 extension ColorViewController: ChoosenColorViewControlletDelegate {
-    func setNewViewBackgroundColor(newValue: UIColor) {
+    func setNewViewBackgroundColor(for newValue: UIColor) {
         view.backgroundColor = newValue
     }
 }
